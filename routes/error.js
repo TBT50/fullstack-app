@@ -1,9 +1,8 @@
 const express = require("express");
-
 const router = express.Router();
 
-const { homePageView } = require("./../controllers/product");
-
-router.get("/", homePageView);
+router.use((req, res) => {
+  res.status(404).render("error");
+});
 
 module.exports = router;

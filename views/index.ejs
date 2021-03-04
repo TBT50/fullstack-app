@@ -1,7 +1,21 @@
 <%- include('partials/head') %>
 
-<main>
-    <h1>Main page</h1>
-</main>
-
-<%- include('partials/footer')%>
+<body>
+  <%- include("partials/header") %>
+  <main>
+    <section class="container">
+      <h1>Main page content</h1>
+      <% if (products.length > 0) { %>
+        <p>Found products!</p>
+        <ul>
+          <% for (let i = 0; i < products.length; i++) { %>
+            <li><%- products[i] %></li>
+          <% } %>
+        </ul>
+      <% } else { %>
+        <p>No products added</p>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>
